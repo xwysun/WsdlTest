@@ -7,8 +7,12 @@ import java.io.OutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.InterfaceAddress;
+import java.net.NetworkInterface;
 import java.net.Socket;
 import java.net.SocketException;
+import java.net.UnknownHostException;
+import java.util.Enumeration;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -109,6 +113,78 @@ public class RxSocket implements IRxSocket{
 
     @Override
     public Flowable<byte[]> startMultiUdpSocket() {
+        return null;
+    }
+
+
+
+    /**
+     * 局域网广播
+     */
+
+
+
+    private static final String TAG_BROADCAST="RxSocket_Broadcast";
+    private DatagramSocket broadcastSocket;
+    private BroadcastSubscriber broadcastSubscriber;
+
+    @Override
+    public boolean sendBroadCast(byte[] output,int port) throws IOException {
+        if (output==null){
+            Log.e(TAG_BROADCAST, "output is null");
+        }
+
+        if (broadcastSocket==null||broadcastSubscriber==null){
+            Log.e(TAG_BROADCAST, "Socket is null!");
+            return false;
+        }
+
+        if (broadcastSocket!=broadcastSubscriber.getSocket()){
+            Log.e(TAG_BROADCAST, "Socket is not suitable to Flowable!");
+            return false;
+        }
+        String broadcastAddr=getBroadcast();
+        if (broadcastAddr == null) {
+            Log.e(TAG_BROADCAST, "broadcast is null");
+            return false;
+        }
+        DatagramPacket packet = new DatagramPacket(output, output.length,
+                InetAddress.getByName(broadcastAddr), port);
+        broadcastSocket.send(packet);
+        return true;
+    }
+
+    @Override
+    public void closeBroadcast() {
+        broadcastSocket.close();
+    }
+
+
+    @Override
+    public Flowable<byte[]> startBroadcast(int timeout) throws SocketException {
+        broadcastSocket=new DatagramSocket();
+        broadcastSocket.setBroadcast(true);
+        broadcastSocket.setSoTimeout(timeout);
+        broadcastSubscriber=new BroadcastSubscriber(broadcastSocket);
+        return Flowable.create(broadcastSubscriber,BackpressureStrategy.BUFFER);
+    }
+
+
+    private String getBroadcast() throws SocketException {
+        System.setProperty("java.net.preferIPv4Stack", "true");
+        for (Enumeration<NetworkInterface> niEnum = NetworkInterface
+                .getNetworkInterfaces(); niEnum.hasMoreElements();) {
+            NetworkInterface ni = niEnum.nextElement();
+            if (!ni.isLoopback()) {
+                for (InterfaceAddress interfaceAddress : ni
+                        .getInterfaceAddresses()) {
+                    if (interfaceAddress.getBroadcast() != null) {
+                        return interfaceAddress.getBroadcast().toString()
+                                .substring(1);
+                    }
+                }
+            }
+        }
         return null;
     }
 }

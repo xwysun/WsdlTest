@@ -2,6 +2,7 @@ package com.example.xwysun.wsdltest.socket;
 
 import java.io.IOException;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.Observable;
 
 import io.reactivex.Flowable;
@@ -27,4 +28,11 @@ public interface IRxSocket {
     Flowable<byte[]> startUdpSocket() throws SocketException;
 
     Flowable<byte[]> startMultiUdpSocket();
+
+
+    boolean sendBroadCast(byte[] output,int port) throws IOException;
+
+    void closeBroadcast();
+
+    Flowable<byte[]> startBroadcast(int timeout) throws SocketException;
 }

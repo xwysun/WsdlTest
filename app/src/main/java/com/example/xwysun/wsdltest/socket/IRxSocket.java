@@ -29,7 +29,6 @@ public interface IRxSocket {
 
     Flowable<byte[]> startMultiUdpSocket();
 
-
     boolean sendBroadCast(byte[] output,int port) throws IOException;
 
     void closeBroadcast();

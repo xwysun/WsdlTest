@@ -1,0 +1,3629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>COGDeviceBinding methods</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+    <script src='../Scripts/Blueprint_Scripts/Script.js' type='text/javascript'></script>
+    <style type="text/css">
+        .syntaxhighlighter {
+            overflow-y: hidden !important;
+            overflow-x: auto !important;
+        }
+    </style>
+</head>
+<body>
+        <h2 id="GetServices">GetServices</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+Boolean param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetServicesResponse res = service.GetServices(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+Boolean param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetServicesResponse res = (COGGetServicesResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetServicesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetServiceCapabilities">GetServiceCapabilities</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGDeviceServiceCapabilities res = service.GetServiceCapabilities();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGDeviceServiceCapabilities res = (COGDeviceServiceCapabilities)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetServiceCapabilitiesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDeviceInformation">GetDeviceInformation</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetDeviceInformationResponse res = service.GetDeviceInformation();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetDeviceInformationResponse res = (COGGetDeviceInformationResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDeviceInformationAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetSystemDateAndTime">SetSystemDateAndTime</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.SetDateTimeType param0 = SetDateTimeType.Manual;
+Boolean param1 = ...;//initialization code
+COGTimeZone param2 = new COGTimeZone();
+COGDateTime param3 = new COGDateTime();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetSystemDateAndTime(param0,param1,param2,param3);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.SetDateTimeType param0 = SetDateTimeType.Manual;
+Boolean param1 = ...;//initialization code
+COGTimeZone param2 = new COGTimeZone();
+COGDateTime param3 = new COGDateTime();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetSystemDateAndTimeAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSystemDateAndTime">GetSystemDateAndTime</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGSystemDateTime res = service.GetSystemDateAndTime();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGSystemDateTime res = (COGSystemDateTime)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetSystemDateAndTimeAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetSystemFactoryDefault">SetSystemFactoryDefault</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.FactoryDefaultType param0 = FactoryDefaultType.Hard;
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetSystemFactoryDefault(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.FactoryDefaultType param0 = FactoryDefaultType.Hard;
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetSystemFactoryDefaultAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="UpgradeSystemFirmware">UpgradeSystemFirmware</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGAttachmentData param0 = new COGAttachmentData();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.UpgradeSystemFirmware(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGAttachmentData param0 = new COGAttachmentData();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.UpgradeSystemFirmwareAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SystemReboot">SystemReboot</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.SystemReboot();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.SystemRebootAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="RestoreSystem">RestoreSystem</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGRestoreSystem param0 = new COGRestoreSystem();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.RestoreSystem(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGRestoreSystem param0 = new COGRestoreSystem();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.RestoreSystemAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSystemBackup">GetSystemBackup</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetSystemBackupResponse res = service.GetSystemBackup();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetSystemBackupResponse res = (COGGetSystemBackupResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetSystemBackupAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSystemLog">GetSystemLog</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.SystemLogType param0 = SystemLogType.System;
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGSystemLog res = service.GetSystemLog(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.SystemLogType param0 = SystemLogType.System;
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGSystemLog res = (COGSystemLog)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetSystemLogAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSystemSupportInformation">GetSystemSupportInformation</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGSupportInformation res = service.GetSystemSupportInformation();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGSupportInformation res = (COGSupportInformation)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetSystemSupportInformationAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetScopes">GetScopes</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetScopesResponse res = service.GetScopes();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetScopesResponse res = (COGGetScopesResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetScopesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetScopes">SetScopes</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetScopes param0 = new COGSetScopes();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetScopes(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetScopes param0 = new COGSetScopes();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetScopesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="AddScopes">AddScopes</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGAddScopes param0 = new COGAddScopes();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.AddScopes(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGAddScopes param0 = new COGAddScopes();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.AddScopesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="RemoveScopes">RemoveScopes</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGRemoveScopes param0 = new COGRemoveScopes();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGRemoveScopesResponse res = service.RemoveScopes(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGRemoveScopes param0 = new COGRemoveScopes();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGRemoveScopesResponse res = (COGRemoveScopesResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.RemoveScopesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDiscoveryMode">GetDiscoveryMode</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGEnums.DiscoveryMode res = service.GetDiscoveryMode();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGEnums.DiscoveryMode res = (COGEnums.DiscoveryMode)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDiscoveryModeAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetDiscoveryMode">SetDiscoveryMode</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.DiscoveryMode param0 = DiscoveryMode.Discoverable;
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetDiscoveryMode(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.DiscoveryMode param0 = DiscoveryMode.Discoverable;
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetDiscoveryModeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetRemoteDiscoveryMode">GetRemoteDiscoveryMode</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGEnums.DiscoveryMode res = service.GetRemoteDiscoveryMode();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGEnums.DiscoveryMode res = (COGEnums.DiscoveryMode)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetRemoteDiscoveryModeAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetRemoteDiscoveryMode">SetRemoteDiscoveryMode</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.DiscoveryMode param0 = DiscoveryMode.Discoverable;
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetRemoteDiscoveryMode(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.DiscoveryMode param0 = DiscoveryMode.Discoverable;
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetRemoteDiscoveryModeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDPAddresses">GetDPAddresses</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetDPAddressesResponse res = service.GetDPAddresses();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetDPAddressesResponse res = (COGGetDPAddressesResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDPAddressesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetDPAddresses">SetDPAddresses</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetDPAddresses param0 = new COGSetDPAddresses();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetDPAddresses(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetDPAddresses param0 = new COGSetDPAddresses();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetDPAddressesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetEndpointReference">GetEndpointReference</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetEndpointReference();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetEndpointReferenceAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetRemoteUser">GetRemoteUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGRemoteUser res = service.GetRemoteUser();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGRemoteUser res = (COGRemoteUser)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetRemoteUserAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetRemoteUser">SetRemoteUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGRemoteUser param0 = new COGRemoteUser();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetRemoteUser(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGRemoteUser param0 = new COGRemoteUser();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetRemoteUserAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetUsers">GetUsers</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetUsersResponse res = service.GetUsers();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetUsersResponse res = (COGGetUsersResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetUsersAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateUsers">CreateUsers</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGCreateUsers param0 = new COGCreateUsers();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.CreateUsers(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGCreateUsers param0 = new COGCreateUsers();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.CreateUsersAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="DeleteUsers">DeleteUsers</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeleteUsers param0 = new COGDeleteUsers();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.DeleteUsers(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGDeleteUsers param0 = new COGDeleteUsers();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.DeleteUsersAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetUser">SetUser</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetUser param0 = new COGSetUser();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetUser(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetUser param0 = new COGSetUser();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetUserAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetWsdlUrl">GetWsdlUrl</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetWsdlUrl();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetWsdlUrlAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetCapabilities">GetCapabilities</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGGetCapabilities param0 = new COGGetCapabilities();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGCapabilities res = service.GetCapabilities(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGGetCapabilities param0 = new COGGetCapabilities();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGCapabilities res = (COGCapabilities)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetCapabilitiesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetHostname">GetHostname</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGHostnameInformation res = service.GetHostname();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGHostnameInformation res = (COGHostnameInformation)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetHostnameAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetHostname">SetHostname</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetHostname(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetHostnameAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetHostnameFromDHCP">SetHostnameFromDHCP</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+Boolean param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+Boolean res = service.SetHostnameFromDHCP(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+Boolean param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.SetHostnameFromDHCPAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDNS">GetDNS</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGDNSInformation res = service.GetDNS();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGDNSInformation res = (COGDNSInformation)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDNSAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetDNS">SetDNS</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetDNS param0 = new COGSetDNS();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetDNS(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetDNS param0 = new COGSetDNS();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetDNSAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetNTP">GetNTP</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGNTPInformation res = service.GetNTP();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGNTPInformation res = (COGNTPInformation)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetNTPAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetNTP">SetNTP</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetNTP param0 = new COGSetNTP();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetNTP(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetNTP param0 = new COGSetNTP();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetNTPAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDynamicDNS">GetDynamicDNS</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGDynamicDNSInformation res = service.GetDynamicDNS();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGDynamicDNSInformation res = (COGDynamicDNSInformation)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDynamicDNSAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetDynamicDNS">SetDynamicDNS</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGEnums.DynamicDNSType param0 = DynamicDNSType.NoUpdate;
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetDynamicDNS(param0,param1,param2);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGEnums.DynamicDNSType param0 = DynamicDNSType.NoUpdate;
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetDynamicDNSAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetNetworkInterfaces">GetNetworkInterfaces</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetNetworkInterfacesResponse res = service.GetNetworkInterfaces();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetNetworkInterfacesResponse res = (COGGetNetworkInterfacesResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetNetworkInterfacesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetNetworkInterfaces">SetNetworkInterfaces</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+COGNetworkInterfaceSetConfiguration param1 = new COGNetworkInterfaceSetConfiguration();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+Boolean res = service.SetNetworkInterfaces(param0,param1);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+COGNetworkInterfaceSetConfiguration param1 = new COGNetworkInterfaceSetConfiguration();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        Boolean res = (Boolean)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.SetNetworkInterfacesAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetNetworkProtocols">GetNetworkProtocols</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGGetNetworkProtocolsResponse res = service.GetNetworkProtocols();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGGetNetworkProtocolsResponse res = (COGGetNetworkProtocolsResponse)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetNetworkProtocolsAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetNetworkProtocols">SetNetworkProtocols</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGSetNetworkProtocols param0 = new COGSetNetworkProtocols();
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetNetworkProtocols(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+COGSetNetworkProtocols param0 = new COGSetNetworkProtocols();
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetNetworkProtocolsAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetNetworkDefaultGateway">GetNetworkDefaultGateway</h2>
+        <p>
+            
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+COGNetworkGateway res = service.GetNetworkDefaultGateway();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        COGNetworkGateway res = (COGNetworkGateway)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetNetworkDefaultGatewayAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetNetworkDefaultGateway">SetNetworkDefaultGateway</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetNetworkDefaultGateway(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetNetworkDefaultGatewayAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetZeroConfiguration">GetZeroConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetZeroConfiguration();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetZeroConfigurationAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetZeroConfiguration">SetZeroConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetZeroConfiguration(param0,param1);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetZeroConfigurationAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetIPAddressFilter">GetIPAddressFilter</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetIPAddressFilter();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetIPAddressFilterAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetIPAddressFilter">SetIPAddressFilter</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetIPAddressFilter(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetIPAddressFilterAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="AddIPAddressFilter">AddIPAddressFilter</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.AddIPAddressFilter(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.AddIPAddressFilterAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="RemoveIPAddressFilter">RemoveIPAddressFilter</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.RemoveIPAddressFilter(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.RemoveIPAddressFilterAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetAccessPolicy">GetAccessPolicy</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetAccessPolicy();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetAccessPolicyAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetAccessPolicy">SetAccessPolicy</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetAccessPolicy(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetAccessPolicyAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateCertificate">CreateCertificate</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.CreateCertificate(param0,param1,param2,param3);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+String param3 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.CreateCertificateAsync (param0,param1,param2,param3);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetCertificates">GetCertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetCertificates();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetCertificatesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetCertificatesStatus">GetCertificatesStatus</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetCertificatesStatus();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetCertificatesStatusAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetCertificatesStatus">SetCertificatesStatus</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetCertificatesStatus(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetCertificatesStatusAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="DeleteCertificates">DeleteCertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.DeleteCertificates(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.DeleteCertificatesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetPkcs10Request">GetPkcs10Request</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetPkcs10Request(param0,param1,param2);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+String param2 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetPkcs10RequestAsync (param0,param1,param2);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="LoadCertificates">LoadCertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.LoadCertificates(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.LoadCertificatesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetClientCertificateMode">GetClientCertificateMode</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetClientCertificateMode();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetClientCertificateModeAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetClientCertificateMode">SetClientCertificateMode</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetClientCertificateMode(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetClientCertificateModeAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetRelayOutputs">GetRelayOutputs</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetRelayOutputs();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetRelayOutputsAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetRelayOutputSettings">SetRelayOutputSettings</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetRelayOutputSettings(param0,param1);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetRelayOutputSettingsAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetRelayOutputState">SetRelayOutputState</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetRelayOutputState(param0,param1);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+String param1 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetRelayOutputStateAsync (param0,param1);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SendAuxiliaryCommand">SendAuxiliaryCommand</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.SendAuxiliaryCommand(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.SendAuxiliaryCommandAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetCACertificates">GetCACertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetCACertificates();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetCACertificatesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="LoadCertificateWithPrivateKey">LoadCertificateWithPrivateKey</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.LoadCertificateWithPrivateKey(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.LoadCertificateWithPrivateKeyAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetCertificateInformation">GetCertificateInformation</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetCertificateInformation(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetCertificateInformationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="LoadCACertificates">LoadCACertificates</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.LoadCACertificates(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.LoadCACertificatesAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateDot1XConfiguration">CreateDot1XConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.CreateDot1XConfiguration(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.CreateDot1XConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetDot1XConfiguration">SetDot1XConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetDot1XConfiguration(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetDot1XConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDot1XConfiguration">GetDot1XConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetDot1XConfiguration(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDot1XConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDot1XConfigurations">GetDot1XConfigurations</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetDot1XConfigurations();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDot1XConfigurationsAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="DeleteDot1XConfiguration">DeleteDot1XConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.DeleteDot1XConfiguration(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.DeleteDot1XConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDot11Capabilities">GetDot11Capabilities</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetDot11Capabilities();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDot11CapabilitiesAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetDot11Status">GetDot11Status</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetDot11Status(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetDot11StatusAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="ScanAvailableDot11Networks">ScanAvailableDot11Networks</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.ScanAvailableDot11Networks(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.ScanAvailableDot11NetworksAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetSystemUris">GetSystemUris</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetSystemUris();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetSystemUrisAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="StartFirmwareUpgrade">StartFirmwareUpgrade</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.StartFirmwareUpgrade();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.StartFirmwareUpgradeAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="StartSystemRestore">StartSystemRestore</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.StartSystemRestore();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.StartSystemRestoreAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetStorageConfigurations">GetStorageConfigurations</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetStorageConfigurations();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetStorageConfigurationsAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="CreateStorageConfiguration">CreateStorageConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.CreateStorageConfiguration(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.CreateStorageConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetStorageConfiguration">GetStorageConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetStorageConfiguration(param0);
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetStorageConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetStorageConfiguration">SetStorageConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetStorageConfiguration(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetStorageConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="DeleteStorageConfiguration">DeleteStorageConfiguration</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.DeleteStorageConfiguration(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.DeleteStorageConfigurationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="GetGeoLocation">GetGeoLocation</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+String res = service.GetGeoLocation();
+//in res variable you have a value returned from your web service
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        String res = (String)result.Result;
+        //in res variable you have a value returned from your web service
+    }
+},"");
+service.GetGeoLocationAsync ();
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="SetGeoLocation">SetGeoLocation</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.SetGeoLocation(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.SetGeoLocationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+        <h2 id="DeleteGeoLocation">DeleteGeoLocation</h2>
+        <p>
+            This method is available in Premium account only. To test if generated classes work correctly with your webservice, please use different method. Check http://EasyWsdl.com/Payment/PremiumAccountDetails to see all benefits of Premium account.
+        </p>
+        <h4>Synchronous operation</h4>
+        <pre>
+        <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+
+String param0 = ...;//initialization code
+
+            
+COGDeviceBinding service = new COGDeviceBinding("");
+service.DeleteGeoLocation(param0);
+//here you can put the code you want to run when your web service operation is finished
+            </code>
+</pre>
+            <p>To invoke a synchronous method, you need to do this in separate thread (for example by using <a href="http://developer.android.com/reference/android/os/AsyncTask.html">AsyncTask</a> class)</p>
+            <h4>Asynchronous operation</h4>
+            <pre>
+            <code class="java">
+import com.example.xwysun.wsdltest.device;
+...
+String param0 = ...;//initialization code
+
+COGDeviceBinding service = new COGDeviceBinding(new IServiceEvents() {
+    @Override
+    public void Starting() {
+    }
+    @Override
+    public void Completed(OperationResult result) {
+        //here you can put the code you want to run when your web service operation is finished
+    }
+},"");
+service.DeleteGeoLocationAsync (param0);
+                </code>
+</pre>
+        <br />
+        <br />
+</body>
+</html>
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>COGDeviceBinding class</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/github.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel='stylesheet' type='text/css' href='../Styles/Blueprint_Styles/Style.css' />
+    <script src='../Scripts/Blueprint_Scripts/Script.js' type='text/javascript'></script>
+</head>
+    <body>
+        <h2>COGDeviceBinding </h2>
+        
+        <p><strong>SOAP Version: 1.2</strong></p>
+        <p>Main class which you can use to connect to your web service</p>
+        
+        <h3>Important settings</h3>
+        <ul>
+            <li>Timeout - the timeout for network operations, in milliseconds. By default: 60 sec.
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+COGDeviceBinding service = new COGDeviceBinding(null,"",30000);
+service.GetServices();
+                    </code>
+        
+</pre>
+            </li>
+            <li>Url - the web service address. By default it is retrieved from the wsdl file
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+COGDeviceBinding service = new COGDeviceBinding(null,"");
+service.GetServices();
+                    </code>
+        
+</pre>
+            </li>
+            <li>httpHeaders - allows you to add custom headers to the http requests.
+                <br/>
+                Example:<br/>
+                <pre >
+                    <code class="java">
+COGDeviceBinding service = new COGDeviceBinding();
+service.httpHeaders.add( new HeaderProperty("Authorization","Basic QWxhZGRpbjpPcGVuU2VzYW1l"));
+service.GetServices();
+                    </code>
+</pre>
+
+            </li>
+            <li>
+                Enable logging - if you enable logging, all requests/responses will be write to the console (for debugging purposes)
+                <br />
+                Example:<br />
+                <pre >
+                    <code class="java">
+COGDeviceBinding service = new COGDeviceBinding();
+service.enableLogging=true;
+service.GetServices();
+                    </code>
+</pre>
+            </li>
+        </ul>
+        
+        <h3>Methods</h3>
+        <ul>
+                <li><a href="COGDeviceBinding_methods.html#GetServices">GetServices</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetServiceCapabilities">GetServiceCapabilities</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDeviceInformation">GetDeviceInformation</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetSystemDateAndTime">SetSystemDateAndTime</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetSystemDateAndTime">GetSystemDateAndTime</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetSystemFactoryDefault">SetSystemFactoryDefault</a></li>
+                <li><a href="COGDeviceBinding_methods.html#UpgradeSystemFirmware">UpgradeSystemFirmware</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SystemReboot">SystemReboot</a></li>
+                <li><a href="COGDeviceBinding_methods.html#RestoreSystem">RestoreSystem</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetSystemBackup">GetSystemBackup</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetSystemLog">GetSystemLog</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetSystemSupportInformation">GetSystemSupportInformation</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetScopes">GetScopes</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetScopes">SetScopes</a></li>
+                <li><a href="COGDeviceBinding_methods.html#AddScopes">AddScopes</a></li>
+                <li><a href="COGDeviceBinding_methods.html#RemoveScopes">RemoveScopes</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDiscoveryMode">GetDiscoveryMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetDiscoveryMode">SetDiscoveryMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetRemoteDiscoveryMode">GetRemoteDiscoveryMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetRemoteDiscoveryMode">SetRemoteDiscoveryMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDPAddresses">GetDPAddresses</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetDPAddresses">SetDPAddresses</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetEndpointReference">GetEndpointReference</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetRemoteUser">GetRemoteUser</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetRemoteUser">SetRemoteUser</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetUsers">GetUsers</a></li>
+                <li><a href="COGDeviceBinding_methods.html#CreateUsers">CreateUsers</a></li>
+                <li><a href="COGDeviceBinding_methods.html#DeleteUsers">DeleteUsers</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetUser">SetUser</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetWsdlUrl">GetWsdlUrl</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetCapabilities">GetCapabilities</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetHostname">GetHostname</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetHostname">SetHostname</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetHostnameFromDHCP">SetHostnameFromDHCP</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDNS">GetDNS</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetDNS">SetDNS</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetNTP">GetNTP</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetNTP">SetNTP</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDynamicDNS">GetDynamicDNS</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetDynamicDNS">SetDynamicDNS</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetNetworkInterfaces">GetNetworkInterfaces</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetNetworkInterfaces">SetNetworkInterfaces</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetNetworkProtocols">GetNetworkProtocols</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetNetworkProtocols">SetNetworkProtocols</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetNetworkDefaultGateway">GetNetworkDefaultGateway</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetNetworkDefaultGateway">SetNetworkDefaultGateway</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetZeroConfiguration">GetZeroConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetZeroConfiguration">SetZeroConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetIPAddressFilter">GetIPAddressFilter</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetIPAddressFilter">SetIPAddressFilter</a></li>
+                <li><a href="COGDeviceBinding_methods.html#AddIPAddressFilter">AddIPAddressFilter</a></li>
+                <li><a href="COGDeviceBinding_methods.html#RemoveIPAddressFilter">RemoveIPAddressFilter</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetAccessPolicy">GetAccessPolicy</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetAccessPolicy">SetAccessPolicy</a></li>
+                <li><a href="COGDeviceBinding_methods.html#CreateCertificate">CreateCertificate</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetCertificates">GetCertificates</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetCertificatesStatus">GetCertificatesStatus</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetCertificatesStatus">SetCertificatesStatus</a></li>
+                <li><a href="COGDeviceBinding_methods.html#DeleteCertificates">DeleteCertificates</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetPkcs10Request">GetPkcs10Request</a></li>
+                <li><a href="COGDeviceBinding_methods.html#LoadCertificates">LoadCertificates</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetClientCertificateMode">GetClientCertificateMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetClientCertificateMode">SetClientCertificateMode</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetRelayOutputs">GetRelayOutputs</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetRelayOutputSettings">SetRelayOutputSettings</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetRelayOutputState">SetRelayOutputState</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SendAuxiliaryCommand">SendAuxiliaryCommand</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetCACertificates">GetCACertificates</a></li>
+                <li><a href="COGDeviceBinding_methods.html#LoadCertificateWithPrivateKey">LoadCertificateWithPrivateKey</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetCertificateInformation">GetCertificateInformation</a></li>
+                <li><a href="COGDeviceBinding_methods.html#LoadCACertificates">LoadCACertificates</a></li>
+                <li><a href="COGDeviceBinding_methods.html#CreateDot1XConfiguration">CreateDot1XConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetDot1XConfiguration">SetDot1XConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDot1XConfiguration">GetDot1XConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDot1XConfigurations">GetDot1XConfigurations</a></li>
+                <li><a href="COGDeviceBinding_methods.html#DeleteDot1XConfiguration">DeleteDot1XConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDot11Capabilities">GetDot11Capabilities</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetDot11Status">GetDot11Status</a></li>
+                <li><a href="COGDeviceBinding_methods.html#ScanAvailableDot11Networks">ScanAvailableDot11Networks</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetSystemUris">GetSystemUris</a></li>
+                <li><a href="COGDeviceBinding_methods.html#StartFirmwareUpgrade">StartFirmwareUpgrade</a></li>
+                <li><a href="COGDeviceBinding_methods.html#StartSystemRestore">StartSystemRestore</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetStorageConfigurations">GetStorageConfigurations</a></li>
+                <li><a href="COGDeviceBinding_methods.html#CreateStorageConfiguration">CreateStorageConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetStorageConfiguration">GetStorageConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetStorageConfiguration">SetStorageConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#DeleteStorageConfiguration">DeleteStorageConfiguration</a></li>
+                <li><a href="COGDeviceBinding_methods.html#GetGeoLocation">GetGeoLocation</a></li>
+                <li><a href="COGDeviceBinding_methods.html#SetGeoLocation">SetGeoLocation</a></li>
+                <li><a href="COGDeviceBinding_methods.html#DeleteGeoLocation">DeleteGeoLocation</a></li>
+        </ul>
+    </body>
+</html>
+

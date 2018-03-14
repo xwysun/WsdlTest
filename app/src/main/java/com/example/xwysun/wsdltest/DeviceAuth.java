@@ -1,6 +1,7 @@
 package com.example.xwysun.wsdltest;
 
 import android.util.Base64;
+import android.util.Log;
 
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
@@ -24,13 +25,37 @@ public class DeviceAuth {
         createAuthString();
     }
 
+    public String getmCreated() {
+        return mCreated;
+    }
+
+    public String getmNonce() {
+        return mNonce;
+    }
+
+    public String getmAuthPwd() {
+        return mAuthPwd;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     private void createAuthString() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'",
                 Locale.CHINA);
         mCreated = df.format(new Date());
         mNonce = getNonce();
         mAuthPwd = getPasswordEncode(mNonce,password, mCreated);
+
+        Log.d("Auth", "createAuthString: "+mCreated+"|"+mNonce+"|"+mAuthPwd);
     }
+
+
 
     public String getNonce() {
         String base = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

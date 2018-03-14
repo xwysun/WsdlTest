@@ -16,11 +16,16 @@ package com.example.xwysun.wsdltest.device;
 
 
 import android.util.Base64;
+import android.util.Log;
+
+import com.example.xwysun.wsdltest.AuthHeaderUtil;
+import com.example.xwysun.wsdltest.DeviceAuth;
 
 import org.ksoap2.HeaderProperty;
 import org.ksoap2.serialization.*;
 import org.ksoap2.transport.*;
 import org.kxml2.kdom.Element;
+import org.kxml2.kdom.Node;
 
 import java.lang.reflect.Constructor;
 import java.security.MessageDigest;
@@ -95,9 +100,14 @@ public class COGDeviceBinding
     protected COGExtendedSoapSerializationEnvelope createEnvelope()
     {
         COGExtendedSoapSerializationEnvelope envelope= new COGExtendedSoapSerializationEnvelope(COGExtendedSoapSerializationEnvelope.VER12);
-
+        envelope.headerOut=new Element[1];
+        envelope.headerOut[0]= AuthHeaderUtil.createAuthHeader("admin","admin");
+        Log.d("header", "createEnvelope: "+envelope.headerOut[0].toString());
             return envelope;
     }
+
+
+
     
     protected java.util.List sendRequest(String methodName,COGExtendedSoapSerializationEnvelope envelope,org.ksoap2.transport.Transport transport ,com.easywsdl.exksoap2.ws_specifications.profile.WS_Profile profile )throws java.lang.Exception
     {

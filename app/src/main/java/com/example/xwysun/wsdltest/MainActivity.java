@@ -12,7 +12,6 @@ import com.example.xwysun.wsdltest.device.COGDeviceBinding;
 import com.example.xwysun.wsdltest.device.COGIServiceEvents;
 import com.example.xwysun.wsdltest.device.COGOperationResult;
 
-import org.ksoap2.HeaderProperty;
 
 
 public class MainActivity extends AppCompatActivity {

@@ -26,7 +26,7 @@ public class TestActivity extends AppCompatActivity {
             public void Completed(COGOperationResult result) {
 
             }
-        },"http://easywsdl.com/Home/Faq");
+        },"http://111.13.101.208");
 //        service.httpHeaders.add(new HeaderProperty("Security s:mustUnderstand=\\\"1\\\" xmlns=\\\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd\\\"",
 //                "<UsernameToken>\n" +
 //                        "                <Username>%s</Username>\n" +
@@ -39,7 +39,7 @@ public class TestActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Log.d(TAG, "run: ");
-                    service.GetServices(Boolean.TRUE);
+                    service.GetDeviceInformation();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
